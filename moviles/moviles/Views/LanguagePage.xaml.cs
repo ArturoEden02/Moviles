@@ -6,9 +6,9 @@ namespace moviles.Views
     using Xamarin.Forms.Xaml;
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LandPage : ContentPage
+    public partial class LanguagePage : ContentPage
     {
-        public LandPage()
+        public LanguagePage()
         {
             InitializeComponent();
         }

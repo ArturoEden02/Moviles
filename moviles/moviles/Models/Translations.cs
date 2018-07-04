@@ -1,7 +1,7 @@
 ﻿namespace moviles.Models
 {
     using Newtonsoft.Json;
-    class Translations
+    public class Translations
     {
         [JsonProperty(PropertyName = "de")]
         public string Germany { get; set; }

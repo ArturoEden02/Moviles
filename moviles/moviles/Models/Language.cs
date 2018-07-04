@@ -1,7 +1,7 @@
 ﻿namespace moviles.Models
 {
     using Newtonsoft.Json;
-    class Language
+    public class Language
     {
         [JsonProperty(PropertyName = "iso639_1")]
         public string Iso6391 { get; set; }

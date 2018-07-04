@@ -1,5 +1,8 @@
 ﻿namespace moviles.ViewModels
 {
+    using System.Collections.Generic;
+    using Models;
+
     class MainViewModel
     {
         #region ViewModels
@@ -25,6 +28,16 @@
             }
             return instance;
         }
+        #endregion
+
+        #region Properties
+
+        public List<Land> LandList
+        {
+            get;
+            set;
+        }
+
         #endregion
     }
 }
