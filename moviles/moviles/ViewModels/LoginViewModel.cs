@@ -4,9 +4,14 @@
     using System.Windows.Input;
     using Xamarin.Forms;
     using Views;
+    using Services;
 
-    class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
+        #region services
+        private ApiService apiService;
+        #endregion 
+
         #region atributo
         private string email;
         private string password;
@@ -41,10 +46,11 @@
         #region Constructores
         public LoginViewModel()
         {
+            this.apiService = new ApiService();
             this.IsRemember = true;
             this.IsEnabled = true;
             this.Email = "arturo.aragonsanchez@hotmail.com";
-            this.Password = "1234";
+            this.Password = "123456";
         }
         #endregion
 
@@ -77,22 +83,50 @@
             }
             this.IsRunning = true;
             this.IsEnabled = false;
-            if (this.Email != "arturo.aragonsanchez@hotmail.com" || this.Password != "1234")
+
+            var connection = await apiService.CheckConnection();
+            if (!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     "Error"
-                    , "Email or password incorrect"
+                    , connection.Message
+                    , "Accept");
+                return;
+            }
+
+            var token = await this.apiService.GetToken("http://movilesapi.azurewebsites.net/", this.Email, this.Password);
+
+            if (token == null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                    , "Something was wrong, please try later."
+                    , "Accept");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                    , token.ErrorDescription
                     , "Accept");
                 this.Password = string.Empty;
                 return;
             }
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
             this.IsRunning = false;
             this.IsEnabled = true;
             this.Email = string.Empty;
             this.Password = string.Empty;
-            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            mainViewModel.Lands = new LandsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
