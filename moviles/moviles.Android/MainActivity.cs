@@ -1,14 +1,14 @@
-﻿using System;
-
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-
-namespace moviles.Droid
+﻿namespace moviles.Droid
 {
+    using System;
+    using Android.App;
+    using Android.Content.PM;
+    using Android.Runtime;
+    using Android.Views;
+    using Android.Widget;
+    using Android.OS;
+    using FFImageLoading.Forms.Droid;
+
     [Activity(Label = "moviles", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -20,6 +20,7 @@ namespace moviles.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            CachedImageRenderer.Init(true);
             LoadApplication(new App());
         }
     }
