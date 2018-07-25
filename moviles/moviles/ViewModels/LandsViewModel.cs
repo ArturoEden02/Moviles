@@ -7,6 +7,7 @@
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
     using Models;
+    using moviles.Helpers;
     using Services;
     using Xamarin.Forms;
 
@@ -65,7 +66,7 @@
             if (!connection.IsSuccess)
             {
                 this.IsRefreshing = false;
-                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, connection.Message, Languages.Accept);
                 await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
@@ -74,7 +75,7 @@
                 "/v2/all");
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 

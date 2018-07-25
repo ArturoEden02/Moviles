@@ -1,4 +1,4 @@
-﻿namespace moviles.Models
+﻿namespace moviles.Domain
 {
     public class Response
     {

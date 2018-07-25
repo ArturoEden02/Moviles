@@ -246,4 +246,10 @@
   <data name="Translations" xml:space="preserve">
     <value>Translations</value>
   </data>
+  <data name="Land" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="Lands" xml:space="preserve">
+    <value>Lands</value>
+  </data>
 </root>

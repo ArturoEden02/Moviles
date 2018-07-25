@@ -286,6 +286,24 @@ namespace moviles.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Land.
+        /// </summary>
+        internal static string Land {
+            get {
+                return ResourceManager.GetString("Land", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lands.
+        /// </summary>
+        internal static string Lands {
+            get {
+                return ResourceManager.GetString("Lands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {

@@ -4,9 +4,10 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:i18n="clr-namespace:moviles.Helpers"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
              BackgroundColor="Silver"
-             x:Class="moviles.Views.LandsPage" Title="Lands">
+             x:Class="moviles.Views.LandsPage" Title="{i18n:Translate Lands}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ffimageloadingsvg:SvgImageSourceConverter 
@@ -15,7 +16,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Lands}">
-            <SearchBar Placeholder="Search..."
+            <SearchBar Placeholder="{i18n:Translate Search}"
                        Text="{Binding Filter,Mode=TwoWay}"
                        SearchCommand="{Binding SearchCommand}"
                        BackgroundColor="Silver" HeightRequest="46"/>

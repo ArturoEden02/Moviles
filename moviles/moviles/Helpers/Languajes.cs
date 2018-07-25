@@ -172,5 +172,70 @@
         {
             get { return Resource.MyLanguages; }
         }
+
+        public static string Translations
+        {
+            get { return Resource.Translations; }
+        }
+
+        public static string German
+        {
+            get { return Resource.German; }
+        }
+
+        public static string Spanish
+        {
+            get { return Resource.Spanish; }
+        }
+
+        public static string French
+        {
+            get { return Resource.French; }
+        }
+
+        public static string Japanese
+        {
+            get { return Resource.Japanese; }
+        }
+
+        public static string Italian
+        {
+            get { return Resource.Italian; }
+        }
+
+        public static string Brazilian
+        {
+            get { return Resource.Brazilian; }
+        }
+
+        public static string Portuguese
+        {
+            get { return Resource.Portuguese; }
+        }
+
+        public static string Dutch
+        {
+            get { return Resource.Dutch; }
+        }
+
+        public static string Coratian
+        {
+            get { return Resource.Croatian; }
+        }
+
+        public static string Persian
+        {
+            get { return Resource.Persian; }
+        }
+
+        public static string Lands
+        {
+            get { return Resource.Lands; }
+        }
+
+        public static string Land
+        {
+            get { return Resource.Land; }
+        }
     }
 }
