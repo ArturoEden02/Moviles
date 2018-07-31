@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using moviles.Backend.Models;
-using moviles.Domain;
-
-namespace moviles.Backend.Controllers
+﻿namespace moviles.Backend.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+    using Backend.Models;
+    using Domain;
+
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         private LocalDataContext db = new LocalDataContext();
