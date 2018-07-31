@@ -50,8 +50,8 @@
             this.apiService = new ApiService();
             this.IsRemember = true;
             this.IsEnabled = true;
-            //this.Email = "arturo.aragonsanchez@hotmail.com";
-            //this.Password = "123456";
+            this.Email = "arturo.aragonsanchez@hotmail.com";
+            this.Password = "123456";
         }
         #endregion
 
